@@ -1,0 +1,100 @@
+// 导入共享变量
+@import '../styles/variables.less';
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+
+  &-content {
+    max-width: 500px;
+    padding: 2rem;
+
+    h1 {
+      font-size: 2.5rem;
+      color: @dark-color;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: @text-gray;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: bold;
+  color: @primary-color;
+  margin-bottom: 1rem;
+  text-shadow: @shadow;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home-link,
+.back-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.home-link {
+  background: @primary-color;
+  color: @dark-color;
+
+  &:hover {
+    background: @primary-hover;
+    transform: translateY(-2px);
+  }
+}
+
+.back-btn {
+  background: transparent;
+  color: @text-gray;
+  border: 2px solid @border-color;
+
+  &:hover {
+    border-color: @primary-color;
+    color: @dark-color;
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 6rem;
+  }
+
+  .not-found {
+    &-content {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-link,
+  .back-btn {
+    width: 200px;
+  }
+}

@@ -1,0 +1,68 @@
+// 导入共享变量
+@import '../styles/variables.less';
+
+.home {
+  text-align: center;
+}
+
+.hero {
+  padding: 4rem 0;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: @dark-color;
+    background: linear-gradient(45deg, @primary-color, @dark-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: @text-gray;
+    margin-bottom: 3rem;
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: @shadow;
+  background: @white;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: @dark-color;
+  }
+
+  p {
+    color: @text-gray;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,132 @@
+// 导入共享变量
+@import '../styles/variables.less';
+
+.contact {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &-content {
+    h1 {
+      font-size: 2.5rem;
+      color: @dark-color;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  }
+
+  &-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  &-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &-method {
+    background: @light-gray;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid @primary-color;
+
+    h3 {
+      color: @dark-color;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    p {
+      color: @text-gray;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.info-section,
+.form-section {
+  h2 {
+    font-size: 1.8rem;
+    color: @dark-color;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid @primary-color;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-weight: 600;
+    color: @dark-color;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.75rem;
+    border: 2px solid @border-color;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: @primary-color;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.submit-btn {
+  background: @primary-color;
+  color: @dark-color;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: @primary-hover;
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    &-content {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    &-info {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    &-methods {
+      gap: 1rem;
+    }
+  }
+}
